@@ -1,0 +1,133 @@
+.header-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.buttonAddTask {
+  position: relative;
+  top: 15px;
+  width: 10%;
+}
+.buttonAddTask a {
+  
+  text-decoration: none;
+  color: #fff;
+}
+
+.addTask {
+  appearance: none;
+  background-color: rgb(83, 221, 105);
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 20px;
+  padding: 6px 16px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.addTask:hover {
+  background-color: #2c974b;
+}
+
+.addTask:focus {
+  box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
+  outline: none;
+}
+
+.addTask:disabled {
+    background-color: #94d3a2;
+    border-color: rgba(27, 31, 35, .1);
+    color: rgba(255, 255, 255, .8);
+    cursor: default;
+  }
+  
+.addTask:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+}
+
+.logo img {
+  max-width: 10vh;
+  margin: 0 16px;
+  vertical-align: middle;
+}
+
+.content {
+  display: flex;
+  margin: 10vh auto 32px;
+  padding: 0 16px;
+  max-width: 60%;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: grey;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 900;
+}
+/* tasks */
+.tasks {
+  max-width: 450px;
+  position: absolute;
+  top: 20%;
+  left: 0px;
+  right: 0px;
+  margin: 0px auto;
+}
+
+label {
+  background: #2c974b;
+  height: 69px;
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #2c3e50;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 900;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-indent: 20px;
+  cursor: pointer;
+  transition: all 0.7s ease;
+  position: relative;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+label h2 span {
+  display: block;
+  font-size: 12px;
+  text-transform: capitalize;
+  font-weight: normal;
+  color: #fff;
+}
+
+.labelIsdone {
+  padding-left: 20px;
+  background-color: rgb(0, 115, 90) !important;
+  border-bottom: 1px solid #34495e !important;
+  color: rgb(253, 112, 129);
+}
+.labelIsdone h2 span {
+  color: rgb(187, 181, 191);
+}
+.labelIsdone {
+  background: url("https://i.imgur.com/eoPQ05r.png") no-repeat left;
+  background-position-x: 10px;
+
+}
+input[type="checkbox"] {
+  display: none;
+}

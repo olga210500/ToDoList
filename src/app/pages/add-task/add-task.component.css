@@ -1,0 +1,12 @@
+.tasks {
+    max-width: 450px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    top: 20%;
+    left: 0px;
+    right: 0px;
+    margin: 0px auto;
+    background-color: royalblue;
+  }
