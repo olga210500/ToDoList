@@ -1,0 +1,21 @@
+<div class="header-container">
+  <app-header> </app-header>
+  <div>
+    <div class="buttonAddTask">
+      <button class="addTask"><a href="/addTask">Add new task</a></button>
+    </div>
+  </div>
+</div>
+
+<div class="tasks">
+  <h1>To-Do List</h1>
+  <div *ngFor="let task of tasks">
+    <label [class.labelIsdone]="task.isDone">
+      <h2>
+        {{ task.taskName }}
+        <span>{{ task.taskDescription }}</span>
+        <input type="checkbox" [(ngModel)]="task.isDone" />
+      </h2>
+    </label>
+  </div>
+</div>
