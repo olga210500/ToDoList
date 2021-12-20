@@ -1,3 +1,34 @@
-<div clss="tasks">
-  <p>add-task works!</p>
+<div class="header-container">
+  <app-header> </app-header>
+  <div>
+    <div class="buttonAddTask">
+      <button class="addTask" (click)="goBack()"></button>
+    </div>
+  </div>
+</div>
+
+<div class="tasks">
+  <h1>Add new task</h1>
+  <div class="formAddTask">
+    <div class="form-group">
+      <label>Task name</label>
+      <input #taskName type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Task description</label>
+      <input #taskDescription type="text" class="form-control" />
+    </div>
+    <div class="flex-button">
+      <button
+        class="addTask"
+        (click)="
+          add(taskName.value, taskDescription.value);
+          taskName.value = '';
+          taskDescription.value = ''
+        "
+      >
+        Submit
+      </button>
+    </div>
+  </div>
 </div>

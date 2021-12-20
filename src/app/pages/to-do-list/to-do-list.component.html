@@ -2,7 +2,7 @@
   <app-header> </app-header>
   <div>
     <div class="buttonAddTask">
-      <button class="addTask"><a href="/addTask">Add new task</a></button>
+      <button class="addTask"><a routerLink="/addTask">Add new task</a></button>
     </div>
   </div>
 </div>
@@ -12,9 +12,17 @@
   <div *ngFor="let task of tasks">
     <label [class.labelIsdone]="task.isDone">
       <h2>
-        {{ task.taskName }}
-        <span>{{ task.taskDescription }}</span>
+        {{ task.name }}
+        <span>{{ task.descriprion }}</span>
         <input type="checkbox" [(ngModel)]="task.isDone" />
+        <div>
+          <button class="deleteButton bi bi-x-circle"></button>
+        </div>
+        <div>
+          <button class="editButton">
+            <a routerLink="/addTask" class="bi bi-pencil-square"> </a>
+          </button>
+        </div>
       </h2>
     </label>
   </div>
