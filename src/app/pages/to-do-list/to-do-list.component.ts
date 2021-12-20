@@ -1,33 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { ToDoTask } from 'src/app/classes/to-do-list-task';
+import { ToDoListService } from 'src/app/services/to-do-list.service';
 
 @Component({
   selector: 'app-to-do-list',
   templateUrl: './to-do-list.component.html',
-  styleUrls: ['./to-do-list.component.css']
+  styleUrls: ['./to-do-list.component.css'],
 })
 export class ToDoListComponent implements OnInit {
-  ngOnInit(): void {
-  }
-  title = 'to-do-list';
- 
-  tasks=[
-    {
-       isDone:true,
-      taskName:'Do home tasks',
-      taskDescription:'oatmeal, fruits &amp; morning tea'
-    },
-    {
-      isDone:false,
-      
-      taskName:'Do angular project',
-      taskDescription:'Finish the project'
-    },
-    {
-      isDone:true,
-      
-      taskName:'Read the book',
-      taskDescription:''
-    }
-  ]
+  tasks: ToDoTask[];
+  constructor(private taskService: ToDoListService) {}
 
+  ngOnInit() {
+    this.getTasks();
+  }
+
+  getTasks(): void {
+    this.taskService.getTasks().subscribe((tasks) => (this.tasks = tasks));
+  }
 }

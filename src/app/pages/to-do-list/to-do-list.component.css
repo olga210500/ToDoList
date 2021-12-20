@@ -1,4 +1,5 @@
-.header-container{
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+.header-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -6,10 +7,10 @@
 .buttonAddTask {
   position: relative;
   top: 15px;
+  right: 1px;
   width: 10%;
 }
 .buttonAddTask a {
-  
   text-decoration: none;
   color: #fff;
 }
@@ -45,21 +46,15 @@
 }
 
 .addTask:disabled {
-    background-color: #94d3a2;
-    border-color: rgba(27, 31, 35, .1);
-    color: rgba(255, 255, 255, .8);
-    cursor: default;
-  }
-  
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: default;
+}
+
 .addTask:active {
   background-color: #298e46;
   box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
-}
-
-.logo img {
-  max-width: 10vh;
-  margin: 0 16px;
-  vertical-align: middle;
 }
 
 .content {
@@ -81,10 +76,11 @@ h1 {
 .tasks {
   max-width: 450px;
   position: absolute;
-  top: 20%;
+  top: 13%;
   left: 0px;
   right: 0px;
   margin: 0px auto;
+  padding-bottom: 20px;
 }
 
 label {
@@ -107,7 +103,8 @@ label {
 }
 
 label h2 span {
-  display: block;
+  display: flex;
+  flex-direction: column;
   font-size: 12px;
   text-transform: capitalize;
   font-weight: normal;
@@ -126,8 +123,43 @@ label h2 span {
 .labelIsdone {
   background: url("https://i.imgur.com/eoPQ05r.png") no-repeat left;
   background-position-x: 10px;
+}
+.labelIsdone .deleteButton {
+  display: flex;
+  position: absolute;
+  right: 5px;
+  top: 35%;
 
+  background-color: inherit;
+  border: none;
+}
+.labelIsdone .editButton {
+  display: none;
+}
+.editButton {
+  background-color: inherit;
+  display: flex;
+  position: absolute;
+  right: 5px;
+  top: 35%;
+  border: none;
+}
+.editButton a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+.editButton a:hover {
+  color: violet;
+}
+.labelIsdone .deleteButton:hover {
+  color: red;
 }
 input[type="checkbox"] {
   display: none;
+}
+label .deleteButton {
+  display: none;
+  font-size: 20px;
+  color: #fff;
 }
