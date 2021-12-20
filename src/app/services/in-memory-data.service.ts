@@ -10,37 +10,37 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const tasks = [
       {
-        id:11,
+        id:0,
         name:'Do home tasks',
-        descriprion:'oatmeal, fruits ; morning tea',
-        isDone:false
+        description:'morning tea',
+        isDone:true
     
       },
       {
-        id:12,
-          name:'Finish the project',
-          descriprion:'finish the project to softserve',
+        id:1,
+          name:'Buy new clothes',
+          description:'buy new jeans on sale',
           isDone:false
       
         },
         {
-          id:13,
+          id:2,
           name:'Finish the project',
-          descriprion:'finish the project to softserve',
+          description:'finish the project to softserve',
+          isDone:true
+      
+        },
+        {
+          id:3,
+          name:'read a book',
+          description:'Find and read some interesting book',
           isDone:false
       
         },
         {
-          id:14,
-          name:'Finish the project',
-          descriprion:'finish the project to softserve',
-          isDone:false
-      
-        },
-        {
-          id:15,
-          name:'Finish the project',
-          descriprion:'finish the project to softserve',
+          id:4,
+          name:'Visit grandparents',
+          description:'visit grand parents in village',
           isDone:false
       
         }
@@ -49,6 +49,6 @@ export class InMemoryDataService implements InMemoryDbService {
   }
 
   genId(tasks: ToDoTask[]): number {
-    return tasks.length > 0 ? Math.max(...tasks.map(task => task.id)) + 1 : 11;
+    return tasks.length > 0 ? Math.max(...tasks.map(task => task.id)) + 1 : 1;
   }
 }

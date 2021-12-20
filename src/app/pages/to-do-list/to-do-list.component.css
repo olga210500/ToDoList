@@ -96,7 +96,7 @@ label {
   letter-spacing: 1px;
   text-indent: 20px;
   cursor: pointer;
-  transition: all 0.7s ease;
+  transition: 0.5s;
   position: relative;
   padding: 5px;
   box-sizing: border-box;

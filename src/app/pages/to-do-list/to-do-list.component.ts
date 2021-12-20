@@ -18,4 +18,11 @@ export class ToDoListComponent implements OnInit {
   getTasks(): void {
     this.taskService.getTasks().subscribe((tasks) => (this.tasks = tasks));
   }
+  deleteTask(task:ToDoTask){
+    this.tasks = this.tasks.filter(t => t.id !== task.id);
+    console.log(task)
+
+    this.taskService.deleteTask(task).subscribe()
+  }
+ 
 }

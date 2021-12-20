@@ -13,14 +13,14 @@
     <label [class.labelIsdone]="task.isDone">
       <h2>
         {{ task.name }}
-        <span>{{ task.descriprion }}</span>
+        <span>{{ task.description }}</span>
         <input type="checkbox" [(ngModel)]="task.isDone" />
         <div>
-          <button class="deleteButton bi bi-x-circle"></button>
+          <button title="Delete" class="deleteButton bi bi-x-circle" (click)='deleteTask(task)'></button>
         </div>
         <div>
-          <button class="editButton">
-            <a routerLink="/addTask" class="bi bi-pencil-square"> </a>
+          <button title="Edit task"  class="editButton">
+            <a routerLink='editTask/{{task.id}}'  class="bi bi-pencil-square"> </a>
           </button>
         </div>
       </h2>

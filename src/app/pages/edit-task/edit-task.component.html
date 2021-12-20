@@ -1,0 +1,28 @@
+<div class="header-container">
+  <app-header> </app-header>
+  <div>
+    <div class="buttonAddTask">
+      <button class="addTask" (click)="goBack()">Back to list</button>
+    </div>
+  </div>
+</div>
+
+<div class="tasks">
+  <h1>Edit task</h1>
+  <div *ngIf="task">
+    <div class="formAddTask">
+      <div class="form-group">
+        <label>Task name</label>
+        <input [(ngModel)]='task.name'  type="text" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Task description</label>
+        <input [(ngModel)]='task.description' type="text" class="form-control" />
+      </div>
+      <div class="flex-button">
+        <button (click)='editTask()' class="addTask">Submit</button>
+      </div>
+    </div>
+  </div>
+  
+</div>

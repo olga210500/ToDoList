@@ -4,30 +4,33 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToDoListComponent } from './pages/to-do-list/to-do-list.component';
 import { AddTaskComponent } from './pages/add-task/add-task.component';
-import {Routes, RouterModule} from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './pages/header/header.component';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
+import { ToDoListService } from './services/to-do-list.service';
+import { HttpClientModule } from '@angular/common/http';
+import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 
-const appRoutes: Routes =[
-  { path: '', component: ToDoListComponent},
-  { path: 'addTask', component: AddTaskComponent},
-
-];
 
 @NgModule({
   declarations: [
     AppComponent,
     ToDoListComponent,
     AddTaskComponent,
-    HeaderComponent
+    HeaderComponent,
+    EditTaskComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
   ],
-  providers: [],
-  bootstrap: [ AppComponent]
+  providers: [ToDoListService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
